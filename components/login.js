@@ -1,11 +1,11 @@
 import React from 'react';
-import {Text, View, StyleSheet, Image, TouchableOpacity,TextInput} from 'react-native';
-import {Button} from 'react-native-paper';
+import { Text, View, StyleSheet, Image, TouchableOpacity, TextInput } from 'react-native';
+import { Button } from 'react-native-paper';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-const LoginScreen = ({navigation}) => {
+const LoginScreen = ({ navigation }) => {
   const [text, setText] = React.useState('');
 
 
@@ -15,91 +15,91 @@ const LoginScreen = ({navigation}) => {
 
   return (
     <KeyboardAwareScrollView>
-    <View style={styles.container}>
-      {/* <Image
+      <View style={styles.container}>
+        {/* <Image
         source={require('../assets/bg.png')}
         style={{width: 415, height: 800, position: 'absolute'}}
       /> */}
-      <View style={styles.img}>
+        <View style={styles.img}>
           <Image
-          source={require('../assets/faveo.jpeg')}
-          style={{width: 350, height: 200}}
-        /> 
-      </View>
-      <View>
-        <View style={styles.section}>
-          <View>
-            <Text
-              style={{
-                fontSize: 32,
-                marginLeft: 24,
-                color: 'white',
-                fontWeight: '300',
-                color: '#039BE5',
-                fontFamily: 'Roboto',
-                padding: 3,
-              }}>
-              login
-            </Text>
-          </View>
-          <View>
-            <View></View>
+            source={require('../assets/faveo.jpeg')}
+            style={{ width: 350, height: 200 }}
+          />
+        </View>
+        <View>
+          <View style={styles.section}>
             <View>
-              <TextInput
-                style={styles.pword}
-                label="Email"
-                value={text}
-                placeholder="  Enter Email Here"
-                onChangeText={text => setText(text)}
-              />
+              <Text
+                style={{
+                  fontSize: 32,
+                  marginLeft: 24,
+                  color: 'white',
+                  fontWeight: '300',
+                  color: '#039BE5',
+                  fontFamily: 'Roboto',
+                  padding: 3,
+                }}>
+                login
+              </Text>
             </View>
             <View>
-              <TextInput
-                style={styles.pword}
-                label="Password"
-                value={text}
-                onChangeText={text => setText(text)}
-                placeholder="  Enter Password Here"
-              />
+              <View></View>
+              <View>
+                <TextInput
+                  style={styles.pword}
+                  label="Email"
+                  value={text}
+                  placeholder="  Enter Email Here"
+                  onChangeText={text => setText(text)}
+                />
+              </View>
+              <View>
+                <TextInput
+                  style={styles.pword}
+                  label="Password"
+                  value={text}
+                  onChangeText={text => setText(text)}
+                  placeholder="  Enter Password Here"
+                />
+              </View>
+              <View
+                style={{ alignItems: 'flex-end', marginRight: 12, padding: 10 }}>
+                <TouchableOpacity>
+                  <Text /* onPress={onPressForgot} */ style={{ color: '#757575' }}>
+                    Forgot password?
+                  </Text>
+                </TouchableOpacity>
+              </View>
+              <View style={{ alignItems: 'center' }}>
+                <Button
+                  mode="contained"
+                  onPress={OnPressLogin}
+                  style={styles.button}>
+                  <Text style={styles.btnText}>Login</Text>
+                </Button>
+              </View>
             </View>
-            <View
-              style={{alignItems: 'flex-end', marginRight: 12, padding: 10}}>
+            <View style={{ alignItems: 'center', marginTop: 20 }}>
               <TouchableOpacity>
-                <Text /* onPress={onPressForgot} */ style={{color: '#757575'}}>
-                  Forgot password?
+                <Text /* onPress={onPressSignup} */ style={{ color: '#757575' }}>
+                  Don't have an account? Sign Up
                 </Text>
               </TouchableOpacity>
             </View>
-            <View style={{alignItems: 'center'}}>
-              <Button
-                mode="contained"
-                onPress={OnPressLogin}
-                style={styles.button}>
-                <Text style={styles.btnText}>Login</Text>
-              </Button>
-            </View>
-          </View>
-          <View style={{alignItems: 'center', marginTop: 20}}>
-            <TouchableOpacity>
-              <Text /* onPress={onPressSignup} */ style={{color: '#757575'}}>
-                Don't have an account? Sign Up
-              </Text>
-            </TouchableOpacity>
           </View>
         </View>
       </View>
-    </View>
     </KeyboardAwareScrollView>
 
   );
 };
 
 const styles = StyleSheet.create({
-  container:{
-    backgroundColor:"#fbfeff",
+  container: {
+    backgroundColor: "#fbfeff",
   },
   bg: {
-    backgroundColor:"#fbfeff",
+    backgroundColor: "#fbfeff",
     position: 'absolute',
     width: 1000,
     height: 1000,
@@ -125,8 +125,8 @@ const styles = StyleSheet.create({
     width: 350,
     marginLeft: 22,
     padding: 10,
-    elevation:0,
-    borderWidth:1,
+    elevation: 0,
+    borderWidth: 1,
     borderColor: "#039BE5",
   },
   button: {
@@ -136,10 +136,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#039BE5',
     borderRadius: 50,
     width: 350,
-    elevation:10,
-    borderWidth:1,
+    elevation: 10,
+    borderWidth: 1,
     borderColor: "#039BE5",
-    
+
   },
   btnText: {
     fontSize: 21,
